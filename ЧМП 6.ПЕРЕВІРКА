@@ -1,0 +1,15 @@
+f = lagrange(x, y)
+
+fig = plt.figure(figsize = (10,8))
+
+plt.plot(xnew, f(xnew), 'b', x, y, 'ro')
+
+plt.title('Lagrange Polynomial_2')
+
+plt.grid()
+
+plt.xlabel('x')
+
+plt.ylabel('y')
+
+plt.show()
