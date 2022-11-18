@@ -1,0 +1,18 @@
+def f(x):
+    return 3*x**4 + 4*x**3 - 12*x**2 - 5
+ 
+def dif_f(x):
+    return 12*x**3 + 12*x**2 - 24*x
+ 
+if __name__ == '__main__':
+    eps = 0.001
+    intervals = [[-3, -2]]
+    for interval in intervals:
+        x1 = interval[0]
+        x2 = interval[1]
+        while True:
+            x1 = x1-f(x1)/dif_f(x1)
+            x2 = x1-((x2-x1)*f(x1)/(f(x2)-f(x1)))
+            if abs(x2-x1) < eps:
+                break
+        print('x = {0}'.format((x1+x2)/2))
